@@ -8,6 +8,7 @@ setenv loadaddr 0x20000000
 # supported by your TV or monitor.
 #    Symbol             | Resolution
 # ----------------------+-------------
+#    "480x320p60hz"     | 480x320 Progressive 60Hz
 #    "480p60hz"         | 720x480 Progressive 60Hz
 #    "576p50hz"         | 720x576 Progressive 50Hz
 #    "720p60hz"         | 1280x720 Progressive 60Hz
