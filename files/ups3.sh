@@ -38,8 +38,13 @@ check()
 		echo $retval
 		if [ $retval -eq 0 ]
 			then
-			echo "battery is low than 3.7V"
-			poweroff -d 5
+				echo "battery is low than 3.7V"
+				lowVoltageCount=$(( lowVoltageCount+1 ))
+				if [ $lowVoltageCount  -gt 5 ]
+				then
+					echo "power off"
+					am start -a android.intent.action.ACTION_REQUEST_SHUTDOWN --ez KEY_CONFIRM true --activity-clear-task
+				fi
 		else
 			echo "battery is good"
 		fi
@@ -71,6 +76,7 @@ else
 	gpio_setvalue $LATCH_GPIO 1
 fi
 
+lowVoltageCount=0
 while true
 do
 	check
