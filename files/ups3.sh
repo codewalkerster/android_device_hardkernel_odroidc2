@@ -32,6 +32,7 @@ check()
 	if [ $retval -eq  1 ]
 	then
 		echo "DC Input Okay"
+		lowVoltageCount=0
 	else
 		echo "Power is shutdown or AC Adaptor is disconnected"
 		gpio_getvalue $BAT_OK_GPIO
@@ -39,6 +40,7 @@ check()
 		if [ $retval -eq 0 ]
 			then
 				echo "battery is low than 3.7V"
+				sleep 118
 				lowVoltageCount=$(( lowVoltageCount+1 ))
 				if [ $lowVoltageCount  -gt 5 ]
 				then
