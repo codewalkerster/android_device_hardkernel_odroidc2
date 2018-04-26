@@ -10,6 +10,8 @@ ro.camera.preview.UseMJPEG=1
 #if wifi Only
 ro.radio.noril=false
 
+net.eth.iface=eth0
+
 # Enable player buildin
 media.amsuperplayer.enable=true
 media.amplayer.enable-acodecs=ac3,eac3,rm,dts
