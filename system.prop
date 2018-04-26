@@ -9,6 +9,7 @@ ro.camera.preview.UseMJPEG=1
 #if wifi Only
 ro.radio.noril=false
 
+net.eth.iface=eth0
 
 #if need pppoe
 ro.net.pppoe=true
