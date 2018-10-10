@@ -119,9 +119,12 @@ if test "${hdmimode}" = "custombuilt"; then setenv cmode "modeline=${modeline}";
 # ODROID-VU8 : backlight "invert"
 setenv backlight_pwm "no"
 
+setenv test_mt_vid "0000"
+setenv test_mt_pid "0000"
+
 showddrclk
 
-setenv bootargs "${rootopt} ${consoleopt} hdmimode=${hdmimode} ${cmode} ${hdmitx} vout=${vout_mode} disablehpd=${disablehpd} logo=${logoopt} ${androidopt} ${selinuxopt} suspend_hdmiphy=${suspend_hdmiphy} led_onoff=${led_onoff} max_freq=${max_freq} maxcpus=${maxcpus} disable_vu7=${disable_vu7} touch_invert_x=${touch_invert_x} touch_invert_y=${touch_invert_y} usbmulticam=${usbmulticam} gpiopower=${gpiopower} backlight_pwm=${backlight_pwm} ddrclock=${ddrclock}"
+setenv bootargs "${rootopt} ${consoleopt} hdmimode=${hdmimode} ${cmode} ${hdmitx} vout=${vout_mode} disablehpd=${disablehpd} logo=${logoopt} ${androidopt} ${selinuxopt} suspend_hdmiphy=${suspend_hdmiphy} led_onoff=${led_onoff} max_freq=${max_freq} maxcpus=${maxcpus} disable_vu7=${disable_vu7} touch_invert_x=${touch_invert_x} touch_invert_y=${touch_invert_y} usbmulticam=${usbmulticam} gpiopower=${gpiopower} backlight_pwm=${backlight_pwm} ddrclock=${ddrclock} test_mt_pid=${test_mt_pid} test_mt_vid=${test_mt_vid}"
 
 save
 
