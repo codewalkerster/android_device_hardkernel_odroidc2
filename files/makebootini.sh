@@ -1,14 +1,14 @@
 #!/bin/sh
-if [ -e "/storage/internal/boot.ini" ]
+if [ -e "/internal/boot.ini" ]
 then
     break
 else
-    cp /system/etc/boot.ini.template /storage/internal/boot.ini
+    cp /system/etc/boot.ini.template /internal/boot.ini
 fi
 
-if [ -e "/storage/internal/Image" ]
+if [ -e "/internal/Image" ]
 then
     break
 else
-    cp /system/etc/Image /storage/internal/Image
+    cp /system/etc/Image /internal/Image
 fi
