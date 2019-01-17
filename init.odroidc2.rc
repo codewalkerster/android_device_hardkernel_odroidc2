@@ -5,6 +5,7 @@ on early-init
 
 
 on init
+    start watchdogd
     # See storage config details at http://source.android.com/tech/storage/
     mkdir /mnt/shell/emulated 0700 shell shell
     mkdir /storage/emulated 0555 root root
@@ -449,3 +450,7 @@ service usbpm /system/bin/usbtestpm
 
 on property:dev.bootcomplete=1
     start usbpm
+
+# Set watchdog timer to 30 seconds and pet it every 10 seconds to get a 20 second margin
+service watchdogd /sbin/watchdogd 10 20
+    class core
