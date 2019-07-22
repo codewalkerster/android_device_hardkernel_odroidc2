@@ -4,5 +4,6 @@
 
   <devices>
     <usbdev vid="1546" pid="01a7" baudrate="9600" />
+    <usbdev vid="1546" pid="01a8" baudrate="9600" />
   </devices>
 </odroid-gps>
