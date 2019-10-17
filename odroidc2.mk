@@ -113,6 +113,7 @@ PRODUCT_COPY_FILES += \
 	device/hardkernel/$(TARGET_PRODUCT)/wifi/wifi_id_list.txt:system/etc/wifi_id_list.txt \
 	device/hardkernel/$(TARGET_PRODUCT)/wifi/8192cu:system/etc/modprobe.d/8192cu \
 	device/hardkernel/$(TARGET_PRODUCT)/wifi/8812au:system/etc/modprobe.d/8812au \
+	device/hardkernel/$(TARGET_PRODUCT)/wifi/8821cu:system/etc/modprobe.d/8821cu \
 	device/hardkernel/$(TARGET_PRODUCT)/wifi/rt2800usb:system/etc/modprobe.d/rt2800usb
 
 PRODUCT_PACKAGES += \

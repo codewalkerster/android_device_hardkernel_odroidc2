@@ -80,3 +80,4 @@ cdab 8011 8192cu /system/etc/modprobe.d/8192cu /* - - compare */
 0bda 8186 8192cu /system/etc/modprobe.d/8192cu /* Intel-Xavi( Azwave) */
 0bda 8812 8812au /system/etc/modprobe.d/8812au
 0bda a811 8812au /system/etc/modprobe.d/8812au
+0bda c811 8821cu /system/etc/modprobe.d/8821cu
