@@ -12,3 +12,10 @@ then
 else
     cp /system/etc/Image /internal/Image
 fi
+
+if [ -e "/internal/default.prop" ]
+then
+    break
+else
+    cp /system/etc/default.prop.template /internal/default.prop
+fi

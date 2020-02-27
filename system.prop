@@ -93,5 +93,3 @@ persist.service.bt.a2dp.sink=false
 ro.sf.lcd_density=160
 
 config.override_forced_orient=false
-
-kiosk_mode=false
