@@ -35,6 +35,8 @@ package_extract_dir("rootsystem", "/system");
 run_program("/bin/chmod", "755", "/system/bin/vu8_backlight.sh");
 run_program("/bin/chown", "root:shell", "/system/bin/vu8_backlight.sh");
 run_program("/bin/rm", "-rf", "/system/bin/vu8c_backlight_c2_android.sh");
+run_program("/bin/chmod", "755", "/system/bin/usb_modeswitch");
+run_program("/bin/chown", "root:shell", "/system/bin/usb_modeswitch");
 
 set_progress(0.8000);
 

@@ -113,3 +113,8 @@ service backlight /system/bin/vu8_backlight.sh
     group root
     disabled
     oneshot
+
+service usb_modeswitch /system/bin/usb_modeswitch -W -c /internal/usb_modeswitch.conf
+    class main
+    disabled
+    oneshot

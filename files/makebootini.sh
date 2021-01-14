@@ -19,3 +19,10 @@ then
 else
     cp /system/etc/default.prop.template /internal/default.prop
 fi
+
+if [ -e "/internal/usb_modeswitch.conf" ]
+then
+    break
+else
+    cp /system/etc/usb_modeswitch.conf.template /internal/usb_modeswitch.conf
+fi

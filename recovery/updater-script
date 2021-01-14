@@ -26,6 +26,7 @@ mount("ext4", "EMMC", "/dev/block/mmcblk0p2", "/system");
 run_program("/bin/cp", "/system/etc/boot.ini.template", "/sdcard/boot.ini");
 run_program("/bin/cp", "/system/etc/hardkernel-720.bmp.gz", "/sdcard/boot-logo.bmp.gz");
 run_program("/bin/cp", "/system/etc/Image_android", "/sdcard/Image_android");
+run_program("/bin/cp", "/system/etc/usb_modeswitch.conf.template", "/sdcard/usb_modeswitch.conf");
 unmount("/system");
 unmount("/sdcard");
 

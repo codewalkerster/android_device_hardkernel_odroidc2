@@ -63,3 +63,6 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 
 PRODUCT_COPY_FILES += \
     device/hardkernel/odroidc2/files/odroid-usbgps.xml:system/etc/odroid-usbgps.xml
+
+PRODUCT_COPY_FILES += \
+    device/hardkernel/odroidc2/files/usb_modeswitch.conf.template:system/etc/usb_modeswitch.conf.template
