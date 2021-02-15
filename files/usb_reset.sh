@@ -2,7 +2,7 @@
 
 for x in $(lsusb); do
 	echo $x
-	if [ "$x" == "16b4:0703" ]; then
+	if [[ "$x" == *"16b4:"* ]]; then
 
 		result=`getprop wlan.driver.status`
 
