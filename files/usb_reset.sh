@@ -1,12 +1,19 @@
 #!/bin/sh
 
+wifi_enabled=0
+
 for x in $(lsusb); do
 	echo $x
 	if [[ "$x" == *"16b4:"* ]]; then
+		#USB OTG Power reset
+		echo 0 > /sys/devices/dwc2_a/vbus
+		sleep 1
+		echo 1 > /sys/devices/dwc2_a/vbus
 
 		result=`getprop wlan.driver.status`
 
 		if [ "$result" == "ok" ]; then
+			wifi_enabled=1
 			svc wifi disable
 			while [ "$result" != "unloaded" ]; do
 				sleep 1
@@ -14,23 +21,15 @@ for x in $(lsusb); do
 			done
 		fi
 
-		echo 126 > /sys/class/gpio/export
-		echo out > /sys/class/gpio/gpio126/direction
+		#USB Host Power reset
+		echo 0 > /sys/devices/dwc2_b/buspower
 		sleep 1
-		echo 0 > /sys/class/gpio/gpio126/value
-		sleep 1
-		echo 1 > /sys/class/gpio/gpio126/value
-		echo 126 > /sys/class/gpio/unexport
+		echo 1 > /sys/devices/dwc2_b/buspower
 
-		sleep 5
+		sleep 3
 
-		if [ "$result" == "unloaded" ]; then
+		if [ "$result" == "unloaded" ] && [ $wifi_enabled -eq 1 ]; then
 			svc wifi enable
-			while [ "$result" != "ok" ]; do
-				sleep 1
-				result=`getprop wlan.driver.status`
-			done
 		fi
-
-fi
+	fi
 done
