@@ -22,11 +22,15 @@ for x in $(lsusb); do
 		fi
 
 		#USB Host Power reset
-		echo 0 > /sys/devices/dwc2_b/buspower
+		echo 126 > /sys/class/gpio/export
+		echo out > /sys/class/gpio/gpio126/direction
 		sleep 1
-		echo 1 > /sys/devices/dwc2_b/buspower
+		echo 0 > /sys/class/gpio/gpio126/value
+		sleep 1
+		echo 1 > /sys/class/gpio/gpio126/value
+		echo 126 > /sys/class/gpio/unexport
 
-		sleep 3
+		sleep 5
 
 		if [ "$result" == "unloaded" ] && [ $wifi_enabled -eq 1 ]; then
 			svc wifi enable
