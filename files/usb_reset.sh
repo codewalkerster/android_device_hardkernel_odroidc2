@@ -4,6 +4,14 @@ wifi_enabled=0
 
 for x in $(lsusb); do
 	echo $x
+	if [[ "$x" == *"0bda:"* ]]; then
+		# If RealTek Combo exists, it must be waiting for usb_modeswitch action.
+		sleep 3
+	fi
+done
+
+for x in $(lsusb); do
+	echo $x
 	if [[ "$x" == *"16b4:"* ]]; then
 		#USB OTG Power reset
 		echo 0 > /sys/devices/dwc2_a/vbus

@@ -105,6 +105,8 @@ service usb_reset /system/bin/usb_reset.sh
 
 on property:dev.bootcomplete=1
     start usb_reset
+
+on property:init.svc.usb_reset=stoppted
     start makebootini
 
 service backlight /system/bin/vu8_backlight.sh
